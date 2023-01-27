@@ -1,0 +1,205 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Notification" this:Notification.in_Message="Process completed successfully" this:Notification.in_NotificationList="[{&quot;Item 1&quot;,&quot;Item 2&quot;,&quot;Item 3&quot;}.ToList]" this:Notification.in_MailAddressNotification="Fernan@email.com" this:Notification.in_Subject="Process completed successfully | Process Name" this:Notification.in_FileList="[New List(Of String)]" this:Notification.in_Title="Process completed successfully | Process Name" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_Message" Type="InArgument(x:String)" />
+    <x:Property Name="in_NotificationList" Type="InArgument(scg:List(x:String))" />
+    <x:Property Name="in_MailAddressNotification" Type="InArgument(x:String)" />
+    <x:Property Name="in_Subject" Type="InArgument(x:String)" />
+    <x:Property Name="in_FileList" Type="InArgument(scg:List(x:String))" />
+    <x:Property Name="in_Title" Type="InArgument(x:String)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1325,1893</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Notification_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>OI_APIServiceNow</x:String>
+      <x:String>OI_AddNotification</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.Specialized</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Mail.Activities</x:String>
+      <x:String>UiPath.Mail.Exchange.Activities</x:String>
+      <x:String>UiPath.Mail.IMAP.Activities</x:String>
+      <x:String>UiPath.Mail.Outlook.Activities</x:String>
+      <x:String>UiPath.Mail.POP3.Activities</x:String>
+      <x:String>UiPath.Mail.SMTP.Activities</x:String>
+      <x:String>UiPath.Database.Activities</x:String>
+      <x:String>UiPath.Database</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>UiPath.CSV.Activities</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.CSV</x:String>
+      <x:String>UiPath.Script.Activities</x:String>
+      <x:String>UiPath.Script.Activities.PowerShell</x:String>
+      <x:String>UiPath.Script.Activities.AutoHotKey</x:String>
+      <x:String>UiPath.Script.AutoHotKey</x:String>
+      <x:String>UiPath.Script.Powershell</x:String>
+      <x:String>UiPath.Orchestrator.Client</x:String>
+      <x:String>UiPath.Orchestrator.Client.Models</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>UiPath.Web.Activities</x:String>
+      <x:String>UiPath.JSON.Activities</x:String>
+      <x:String>UiPath.REST.Activities</x:String>
+      <x:String>UiPath.SOAP.Activities</x:String>
+      <x:String>UiPath.XML.Activities</x:String>
+      <x:String>UiPath.Web</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Text.RegularExpressions</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.Mail</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>OI_APIServiceNow</AssemblyReference>
+      <AssemblyReference>OI_AddNotification</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Plugin.Workflow</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Database.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Database</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Script.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Script</AssemblyReference>
+      <AssemblyReference>UiPath.OrchestratorClient</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Web</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualStudio.Services.Common</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>UiPath.CV</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <sap:WorkflowViewStateService.ViewState>
+    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+      <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
+    </scg:Dictionary>
+  </sap:WorkflowViewStateService.ViewState>
+  <Sequence sap:VirtualizedContainerService.HintSize="967,1249" sap2010:WorkflowViewState.IdRef="Sequence_56">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Sequence DisplayName="Notification" sap:VirtualizedContainerService.HintSize="925,1161" sap2010:WorkflowViewState.IdRef="Sequence_50">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="x:String" Name="NotificationList">
+          <Variable.Default>
+            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="String.Empty" />
+          </Variable.Default>
+        </Variable>
+        <Variable x:TypeArguments="x:String" Name="TemplateHTML">
+          <Variable.Default>
+            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="String.Empty" />
+          </Variable.Default>
+        </Variable>
+      </Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <If Condition="[File.Exists(&quot;Notification\notification.html&quot;)]" DisplayName="If Template Exists" sap:VirtualizedContainerService.HintSize="863,242" sap2010:WorkflowViewState.IdRef="If_80">
+        <If.Then>
+          <ui:ReadTextFile Content="[TemplateHTML]" DisplayName="Read text file" FileName="Notification\notification.html" sap:VirtualizedContainerService.HintSize="384,80" sap2010:WorkflowViewState.IdRef="ReadTextFile_4" />
+        </If.Then>
+        <If.Else>
+          <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_232">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[TemplateHTML]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String" xml:space="preserve">["&lt;!DOCTYPE html&gt;&lt;html lang=""en""&gt;&lt;head&gt;    &lt;title&gt;&lt;/title&gt; &lt;/head&gt;&lt;body  bg-color=""#ffffff"" style=""background-color:#ffffff""&gt;&lt;!--[if mso]&gt;&lt;style type=""text/css""&gt;table, td {font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555; !important;}&lt;/style&gt;&lt;![endif]--&gt;	&lt;center&gt;		&lt;div&gt;				&lt;img src=""logo.png"" width=""170"" alt=""Inicio"" style=""margin-top: 35px;""&gt;		&lt;/div&gt;		&lt;table role=""presentation"" style=""margin: 0 auto;"" width=""30%"" cellspacing=""0"" cellpadding=""0"" border=""0"" align=""center""&gt;			&lt;tbody&gt;				&lt;tr&gt;					&lt;td&gt;						&lt;table role=""presentation"" style=""margin: 0 auto;"" width=""800"" cellspacing=""0"" cellpadding=""0"" border=""0"" align=""center""&gt;							&lt;tbody&gt;								&lt;tr&gt;									&lt;td style=""padding: 0px; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;""&gt;									   &lt;p style=""font-family: sans-serif; font-size: 12px; line-height: 15px; color: #888888;""&gt; @date&lt;/p&gt;										  &lt;h1 style=""margin: 0 0 10px; font-size: 25px; line-height: 30px; color: #333333; font-weight: normal;""&gt;@title&lt;/h1&gt;										 &lt;p&gt;@message&lt;/p&gt;										@notificationList									&lt;/td&gt;								&lt;/tr&gt;							&lt;/tbody&gt;						&lt;/table&gt;					&lt;/td&gt;				&lt;/tr&gt;			&lt;/tbody&gt;		&lt;/table&gt;		&lt;table role=""presentation"" style=""margin: 0 auto;"" width=""600"" cellspacing=""0"" cellpadding=""0"" border=""0"" align=""center""&gt;			&lt;tbody&gt;					&lt;tr&gt;						&lt;td style=""padding: 20px; font-family: sans-serif; font-size: 12px; line-height: 15px; text-align: center; color: #888888;""&gt;						&lt;br&gt;&lt;br&gt;						&lt;br&gt;&lt;span&gt;This Is an automatically generated email, please Do Not reply&lt;/span&gt;						&lt;br&gt;&lt;br&gt;  						&lt;/td&gt;					&lt;/tr&gt;				&lt;/tbody&gt;			&lt;/table&gt;    &lt;/center&gt;&lt;/body&gt;&lt;/html&gt;"]</InArgument>
+            </Assign.Value>
+          </Assign>
+        </If.Else>
+      </If>
+      <If Condition="[in_NotificationList.Count &gt; 0]" sap:VirtualizedContainerService.HintSize="863,271" sap2010:WorkflowViewState.IdRef="If_81">
+        <If.Then>
+          <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_236">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[notificationList]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">["&lt;ul&gt;&lt;li&gt;"+String.Join("&lt;/li&gt;&lt;li&gt;",in_NotificationList)+"&lt;/li&gt;&lt;/ul&gt;"]</InArgument>
+            </Assign.Value>
+          </Assign>
+        </If.Then>
+      </If>
+      <Assign sap:VirtualizedContainerService.HintSize="863,83" sap2010:WorkflowViewState.IdRef="Assign_234">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[TemplateHTML]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String" xml:space="preserve">[TemplateHTML.Replace("@date",Now.ToString).
+						Replace("@title",in_Title).
+						Replace("@message", in_Message).
+					   	Replace("@notificationList",notificationList)]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <AddToCollection x:TypeArguments="x:String" Collection="[in_FileList]" DisplayName="Add To Collection" sap:VirtualizedContainerService.HintSize="863,25" sap2010:WorkflowViewState.IdRef="AddToCollection`1_2" Item="Notification\logo.jpg" />
+      <Assign sap:VirtualizedContainerService.HintSize="863,83" sap2010:WorkflowViewState.IdRef="Assign_238">
+        <Assign.To>
+          <OutArgument x:TypeArguments="scg:List(x:String)">[in_FileList]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="scg:List(x:String)" xml:space="preserve">[(From item In in_FileList
+Where File.Exists(item)
+Select item).ToList]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" AttachmentsCollection="[in_FileList]" Body="[TemplateHTML]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="863,146" sap2010:WorkflowViewState.IdRef="SendOutlookMail_1" Importance="Normal" IsBodyHtml="True" IsDraft="False" Sensitivity="Normal" Subject="[in_Subject]" To="[in_MailAddressNotification]">
+        <ui:SendOutlookMail.Files>
+          <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
+        </ui:SendOutlookMail.Files>
+      </ui:SendOutlookMail>
+    </Sequence>
+  </Sequence>
+</Activity>
